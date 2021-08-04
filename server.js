@@ -22,3 +22,13 @@ const port = 5000;
 app.listen(port, () => {
   console.log("server is listening at localhost:" + port);
 });
+
+app.get("/getData", (req, res) => {
+  res.send(projectData);
+  console.log("data sent");
+});
+
+app.post("/addData", (req, res) => {
+  projectData = req.body;
+  console.log(req.body);
+});
