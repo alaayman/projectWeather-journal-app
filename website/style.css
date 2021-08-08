@@ -1,3 +1,6 @@
+*{
+  border-radius: 10px;
+}
 body {
   box-sizing: border-box;
   margin: 0;
@@ -5,7 +8,7 @@ body {
   height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   background-image: url("clouds.jpg");
   background-repeat: no-repeat;
@@ -20,7 +23,8 @@ div {
   display: flex;
   flex-direction: column;
   width: 80%;
-  margin-top: 5%;
+  min-height: 80%;
+  margin-top: 50px;
   /* height: 80%; */
   background: linear-gradient(
     45deg,
@@ -41,7 +45,7 @@ div {
 .holder {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 80%;
   justify-content: space-between;
   /* border: solid 2px; */
   margin: 10px;
@@ -65,21 +69,24 @@ div {
 
 #date {
   width: 200px;
-  height: 100px;
+
 }
 
 #temp {
   width: 200px;
-  height: 100px;
+
 }
 #name {
   min-width: 200px;
-  height: 100px;
+
 }
 
 #content {
   width: 200px;
-  height: 100px;
+
+}
+.display{
+  background-color: blueviolet;
 }
 
 .headline {
@@ -102,18 +109,20 @@ label {
 input {
   display: block;
   height: 40px;
+  text-align: center;
   /* width: 320px; */
-  background: #22b2da;
+  background: #22b2da88;
   color: #f0d43a;
   font-size: 20px;
   font-family: "Oswald", sans-serif;
   border: none;
+  padding: 10px;
 }
 
 button {
   /* display: block; */
   width: 300;
-  height: 80px;
+  height: 50px;
   background: #3b4a6b;
   color: #f0d43a;
   font-size: 18px;
@@ -127,10 +136,11 @@ h1 {
 }
 
 textarea {
-  background: #22b2da;
+  background: #22b2da88;
   color: #f0d43a;
   font-size: 20px;
   font-family: "Oswald", sans-serif;
+  text-align: ;
 }
 /* Reset style for HTML element on active to have no border*/
 input:focus,

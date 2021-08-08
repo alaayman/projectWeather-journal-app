@@ -17,6 +17,7 @@ const feelingEntry = document.getElementById("feelings");
 const dateDisplay = document.getElementById("date");
 const tempDisplay = document.getElementById("temp");
 const contentDisplay = document.getElementById("content");
+const feelingsDisplay = document.getElementById("displayFeelings");
 const generateBtn = document
   .getElementById("generate")
   .addEventListener("click", getWeatherData); // event listener to call main function
@@ -25,7 +26,7 @@ const generateBtn = document
 function getWeatherData() {
   let zipCode = zipCodeEntry.value;
   const zipUrl = WeatherBaseUrlZip + zipCode + metricUnits + apiKeyString;
-  let feelings = feelingEntry.value;
+  // let feelings = feelingEntry.value;
   console.log("the entered url " + zipUrl);
   // check if user entered zip code and if it is a number
   if (zipCode == "" || isNaN(zipCode))
@@ -33,8 +34,13 @@ function getWeatherData() {
 
   getData(zipUrl)
     // .then(console.log("after get "), console.log(newData))
-    .then(postDataToServer("/addData", newData))
-    .then(updateUi());
+    .then(function (newData) {
+      postDataToServer("/addData", newData);
+    })
+    .then(function (newData) {
+      updateUi();
+    });
+  // .then(updateUi());
 }
 
 // function to get data from openWeather api
@@ -44,13 +50,15 @@ const getData = async (url = "") => {
     const newData = await res.json();
     console.log("in get "); // to watch values
     console.log(newData); // to watch values
-    return newData
+    return newData;
   } catch (error) {
     console.log(error);
   }
 };
 
 const postDataToServer = async (url = "", data = {}) => {
+  let feelings = feelingEntry.value;
+  console.log(feelings);
   data["feelings"] = feelings; // adding user felling value to data object
   const res = await fetch(url, {
     method: "POST",
@@ -78,7 +86,7 @@ const updateUi = async () => {
     tempDisplay.innerHTML = finalData.main.temp;
     contentDisplay.innerHTML = finalData.weather[0].description;
     document.getElementById("name").innerHTML = finalData.name;
-    feelingEntry.innerHTML = finalData.feelings;
+    feelingsDisplay.innerHTML = finalData.feelings;
   } catch (error) {
     console.log(error);
   }

@@ -38,6 +38,6 @@ app.get("/getData", (req, res) => {
 app.post("/addData", (req, res) => {
   projectData = req.body;
   historyData.unshift(projectData);
-  console.log(projectData);
-  console.log(historyData);
+  //console.log(projectData);
+  console.log(historyData.values);
 });
