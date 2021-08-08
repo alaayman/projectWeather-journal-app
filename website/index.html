@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Journal</title>
     <link
       href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap"
@@ -22,7 +23,7 @@
           class="myInput"
           id="feelings"
           placeholder="Enter your feelings here"
-          rows="3"
+          rows="2"
           cols="50"
         ></textarea>
       </div>
@@ -31,13 +32,18 @@
         <div class="title">Most Recent Entry</div>
         <div id="entryHolder">
           <section>
-            <div class='display' id="name"></div>
-            <div class='display' id="date"></div>
+            <div class="display" id="name"></div>
+            <div class="display" id="temp"></div>
           </section>
           <section>
-            <div class='display' id="temp"></div>
-            <div class='display' id="content"></div>
-            <div class='display' id="displayFeelings"></div>
+            <div class="display" id="icon">
+              <img id="iconImage" src="#" alt="" />
+            </div>
+            <div class="display" id="content"></div>
+          </section>
+          <section>
+            <div class="display" id="date"></div>
+            <div class="display" id="displayFeelings"></div>
           </section>
         </div>
       </div>

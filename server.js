@@ -39,5 +39,6 @@ app.post("/addData", (req, res) => {
   projectData = req.body;
   historyData.unshift(projectData);
   //console.log(projectData);
-  console.log(historyData.values);
+  //console.log(historyData);
+  console.log('feeling is : '+projectData.feelings);
 });
