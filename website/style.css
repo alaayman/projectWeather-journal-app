@@ -15,10 +15,6 @@ body {
   background-attachment: fixed;
   background-size: 100% 100%;
 }
-div {
-  text-align: center;
-  /* border: solid 2px red; */
-}
 
 #app {
   display: flex;
@@ -26,7 +22,6 @@ div {
   width: 80%;
   min-height: 80%;
   margin-top: 50px;
-  /* height: 80%; */
   background: linear-gradient(
     45deg,
     rgba(255, 255, 255, 0.4),
@@ -38,7 +33,6 @@ div {
   color: #ffffff;
   /* justify-content: center; */
   align-items: center;
-  /* grid-gap: 1em; */
   font-size: 1em;
   font-family: "Oswald", sans-serif;
 }
@@ -61,7 +55,7 @@ section {
 .holder.entry {
   background-color: rgba(162, 204, 206, 0.13);
   margin-bottom: 50px;
-  padding-bottom: 20PX;
+  padding-bottom: 20px;
 }
 
 #entryHolder {
@@ -71,7 +65,7 @@ section {
   align-items: center;
   text-align: center;
 }
-#displayFeelings{
+#displayFeelings {
   width: 200px;
   font-size: 2em;
 }
@@ -133,7 +127,6 @@ input {
   display: block;
   height: 40px;
   text-align: center;
-  /* width: 320px; */
   background: #22b2da88;
   color: #f0d43a;
   font-size: 1.3em;
